@@ -23,4 +23,8 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
+
+    // relacionamento um-para-um
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    private Payment payment;
 }

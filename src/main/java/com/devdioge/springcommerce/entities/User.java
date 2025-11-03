@@ -3,6 +3,7 @@ package com.devdioge.springcommerce.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -23,5 +24,6 @@ public class User {
     // relacionamento um-para-muitos
     @EqualsAndHashCode.Exclude // remover e melhorar performace
     @OneToMany(mappedBy = "client")
+    @Getter
     private List<Order> orders = new ArrayList<>();
 }
