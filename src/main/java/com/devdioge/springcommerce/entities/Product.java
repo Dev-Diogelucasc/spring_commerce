@@ -2,6 +2,7 @@ package com.devdioge.springcommerce.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.util.HashSet;
@@ -11,10 +12,12 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_product")
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = false)
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
     private String name;
 

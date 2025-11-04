@@ -2,6 +2,7 @@ package com.devdioge.springcommerce.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.time.Instant;
@@ -12,10 +13,12 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_order")
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = false)
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
     // dado que armazena a data e a hora, mas sem informações de fuso horário

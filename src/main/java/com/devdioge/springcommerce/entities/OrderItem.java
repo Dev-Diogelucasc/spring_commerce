@@ -3,15 +3,15 @@ package com.devdioge.springcommerce.entities;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "tb_order_item")
+@EqualsAndHashCode(onlyExplicitlyIncluded = false)
 public class OrderItem {
 
     @EmbeddedId
+    @EqualsAndHashCode.Include
     private OrderItemPK id = new OrderItemPK();
 
     @Getter

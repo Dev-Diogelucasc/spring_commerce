@@ -12,10 +12,12 @@ import java.util.List;
 @Entity
 @Table(name= "tb_user")
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = false)
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
     private String name;
 
