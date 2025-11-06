@@ -1,4 +1,4 @@
-package com.devdioge.springcommerce.entities;
+package com.devdioge.springcommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity

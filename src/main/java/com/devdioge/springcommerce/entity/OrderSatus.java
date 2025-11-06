@@ -1,4 +1,4 @@
-package com.devdioge.springcommerce.entities;
+package com.devdioge.springcommerce.entity;
 
 public enum OrderSatus {
 

@@ -1,4 +1,4 @@
-package com.devdioge.springcommerce.entities;
+package com.devdioge.springcommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
