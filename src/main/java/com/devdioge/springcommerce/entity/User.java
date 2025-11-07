@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name= "tb_user")
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = false)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class User {
 
     @Id
@@ -30,6 +30,5 @@ public class User {
     // relacionamento um-para-muitos
     @EqualsAndHashCode.Exclude // performace melhor
     @OneToMany(mappedBy = "client")
-    @Getter
     private List<Order> orders = new ArrayList<>();
 }

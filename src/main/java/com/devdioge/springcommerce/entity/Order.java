@@ -13,7 +13,7 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_order")
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = false)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Order {
 
     @Id
@@ -36,7 +36,6 @@ public class Order {
     private Payment payment;
 
     @OneToMany(mappedBy = "id.order")
-    @Getter
     private Set<OrderItem> items = new HashSet<>();
 
     public List<Product> getProducts() {

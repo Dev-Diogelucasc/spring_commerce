@@ -12,7 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_product")
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = false)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Product {
 
     @Id
@@ -27,7 +27,6 @@ public class Product {
     private String imgUrl;
 
     // relacionamento muitos-para-muitos
-    @Getter
     @ManyToMany
     @JoinTable(name = "tb_product_category",
     joinColumns = @JoinColumn(name = "product_id"),
@@ -35,7 +34,6 @@ public class Product {
     private Set<Category> categories = new HashSet<>();
 
     @OneToMany(mappedBy = "id.product")
-    @Getter
     private Set<OrderItem> items = new HashSet<>();
 
     public List<Order> getOrders() {

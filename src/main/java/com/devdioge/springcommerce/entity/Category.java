@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_category")
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = false)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Category {
 
     @Id
@@ -22,6 +22,5 @@ public class Category {
 
     // relacionamento muitos-para-muitos
     @ManyToMany(mappedBy = "categories")
-    @Getter
     private Set<Product> products = new HashSet<>();
 }

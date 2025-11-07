@@ -7,7 +7,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "tb_order_item")
-@EqualsAndHashCode(onlyExplicitlyIncluded = false)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class OrderItem {
 
     @EmbeddedId

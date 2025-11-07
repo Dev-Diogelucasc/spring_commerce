@@ -1,13 +1,8 @@
 package com.devdioge.springcommerce.dto;
 
-import com.devdioge.springcommerce.entity.Product;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class ProductDTO {
 
     private Long id;
@@ -15,12 +10,4 @@ public class ProductDTO {
     private String description;
     private Double price;
     private String imgUrl;
-
-    public ProductDTO(Product entity) {
-        id = entity.getId();
-        name = entity.getName();
-        description = entity.getDescription();
-        price = entity.getPrice();
-        imgUrl = entity.getImgUrl();
-    }
 }

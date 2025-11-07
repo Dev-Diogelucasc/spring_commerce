@@ -9,7 +9,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "tb_payment")
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = false)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
