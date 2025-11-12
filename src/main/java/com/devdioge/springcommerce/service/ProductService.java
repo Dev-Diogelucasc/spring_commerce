@@ -49,4 +49,9 @@ public class ProductService {
         productRepository.save(product);
         return modelMapper.map(product, ProductDTO.class);
     }
+
+    @Transactional
+    public void delete(Long id) {
+       productRepository.deleteById(id);
+    }
 }
