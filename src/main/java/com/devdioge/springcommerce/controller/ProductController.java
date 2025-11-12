@@ -21,15 +21,15 @@ public class ProductController {
     // Parâmetro na rota
     @GetMapping(value = "/{id}")
     public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
-        ProductDTO productDTO =  productService.findBytId(id);
-        return ResponseEntity.ok(productDTO);
+        ProductDTO dto =  productService.findBytId(id);
+        return ResponseEntity.ok(dto);
     }
 
     // Pageable, para me retornar paginado, ao inves de retornar toda a lista
     @GetMapping
     public ResponseEntity<Page<ProductDTO>> findAll(Pageable pageable) {
-        Page<ProductDTO> productDTO =  productService.findAll(pageable);
-        return ResponseEntity.ok(productDTO);
+        Page<ProductDTO> dto =  productService.findAll(pageable);
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping
@@ -40,4 +40,9 @@ public class ProductController {
         return ResponseEntity.created(uri).body(dto);
     }
 
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO dto) {
+        dto =  productService.update(id, dto);
+        return ResponseEntity.ok(dto);
+    }
 }
